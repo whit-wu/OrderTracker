@@ -16,19 +16,16 @@ namespace OrderTracker.Controllers
 
 
         private readonly ILogger<OrderTrackerController> _logger;
-        private OrderTrackerContext _context;
         private string userId = "SYSTEM";
         private IUnitOfWork uow;
 
-        public OrderTrackerController(ILogger<OrderTrackerController> logger)
+        public OrderTrackerController(ILogger<OrderTrackerController> logger, IUnitOfWork _uow)
         {
             _logger = logger;
 
             try
             {
-                _context = new OrderTrackerContext(false);
-
-                uow = new UnitOfWork(_context);
+                uow = _uow;
             }
             catch (Exception ex)
             {
@@ -49,6 +46,34 @@ namespace OrderTracker.Controllers
         {
 
             var result = uow.GetCustomerById(id);
+            return result;
+        }
+
+        
+        /// <summary>
+        /// Adds a hardcoded customer
+        /// </summary>
+        /// <returns></returns>
+        [HttpPost]
+        [Route("AddCustomer")]
+        public bool AddHardCodedCustomer()
+        {
+            Customer customer = new Customer()
+            {
+            
+                FirstName = "George",
+                LastName = "Lucas",
+                StreetAddress = "123 Sesame Street",
+                City = "New York City",
+                ZIP = "11111",
+                State = "NY",
+                PhoneNumber = "1111111111",
+                Email = "gl@skyguy.com"
+
+            };
+
+            var result = uow.AddCustomer(customer);
+
             return result;
         }
     }

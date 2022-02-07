@@ -25,14 +25,14 @@ namespace OrderTracker.Tests
 
             //  with sql lite inmemory, we need to create the tables first in one context, 
             // and then recreate the context for our uses
-            using (var migContext = new OrderTrackerContext(options, true))
+            using (var migContext = new OrderTrackerContext(options))
             {
                 migContext.Database.EnsureCreated();
             }
 
 
             // the actual context
-            _context = new OrderTrackerContext(options, true);
+            _context = new OrderTrackerContext(options);
 
             uow = new UnitOfWork(_context);
         }
