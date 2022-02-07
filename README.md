@@ -1,7 +1,7 @@
 # OrderTracker
 
 ## Description
-OrderTracker is an ASP.NET Core Web API application meant to teach C# Programming II (CIS 229) at students Grand Rapids Community College how the repository pattern is implemented with Entity Framework Core.  The application does this by building on previous concepts taught to them earlier in the class.  Simply put, it takes all the concepts we've been studying thus far and consolidates them to a single application.  It also serves as an introduction to Web APIs, data annotations, Fluent API, unit testing with a mocked/in-memory db, and dependency injection.
+OrderTracker is an ASP.NET Core Web API application meant to teach C# Programming II (CIS 229) to students at Grand Rapids Community College how the repository pattern is implemented with Entity Framework Core.  The application does this by building on previous concepts taught to them earlier in the class.  It also serves as an introduction to Web APIs, data annotations, Fluent API, unit testing with a mocked/in-memory db, and dependency injection.
 
 ## Concepts Built Upon
 Concepts that would have been taught to the class prior to using this app include:
