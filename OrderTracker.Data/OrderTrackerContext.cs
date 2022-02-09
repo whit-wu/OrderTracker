@@ -13,17 +13,8 @@ namespace OrderTracker.Data
 
         public DbSet<Manufacturer> Manufacturers { get; set; }
 
-        public bool IsUnitTestContext { get; set; }
-
-        private readonly string connectionString;
-
-        public string DbPath { get; private set; }
-
-        public OrderTrackerContext([NotNullAttribute] DbContextOptions options) : base(options)
-        {
-
-        }
-
+        public OrderTrackerContext([NotNullAttribute] DbContextOptions options) : base(options) { }
+        
 
         // you can use this method here to setup contraints on your model properties.
         // try go google fluent api and figure out how we can set each model's id to be unique

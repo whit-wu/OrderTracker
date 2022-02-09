@@ -16,7 +16,6 @@ namespace OrderTracker.Controllers
 
 
         private readonly ILogger<OrderTrackerController> _logger;
-        private string userId = "SYSTEM";
         private IUnitOfWork uow;
 
         public OrderTrackerController(ILogger<OrderTrackerController> logger, IUnitOfWork _uow)
