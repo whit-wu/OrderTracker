@@ -8,7 +8,7 @@ Concepts that would have been taught to the class prior to using this app includ
 
 1. Separation of Concerns
 1. Interfaces and Unit Testing
-1. Intitial Setup of EF Core
+1. Initial Setup of EF Core
 1. EF Core Migrations
 1. Querying with LINQ
 
