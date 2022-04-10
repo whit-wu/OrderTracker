@@ -75,5 +75,36 @@ namespace OrderTracker.Controllers
 
             return result;
         }
+
+
+
+        /// <summary>
+        /// Adds a customer manually
+        /// </summary>
+        /// <returns></returns>
+        [HttpPost]
+        [Route("AddCustomerMan")]
+        //public bool AddManualCustomer(CustomerDto customerDto)
+        public bool AddManualCustomer(Customer customerDto)
+        {
+
+            Customer customer = new Customer()
+            {
+
+                FirstName = customerDto.FirstName,
+                LastName = customerDto.LastName,
+                StreetAddress = customerDto.StreetAddress,
+                City = customerDto.City,
+                ZIP = customerDto.ZIP,
+                State = customerDto.State,
+                PhoneNumber = customerDto.PhoneNumber,
+                Email = customerDto.Email
+
+            };
+
+            var result = uow.AddCustomer(customer);
+
+            return result;
+        }
     }
 }
