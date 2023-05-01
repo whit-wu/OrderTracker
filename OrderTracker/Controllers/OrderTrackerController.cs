@@ -48,7 +48,15 @@ namespace OrderTracker.Controllers
             return result;
         }
 
-        
+        [HttpGet]
+        [Route("GetCustomers")]
+        public IQueryable<Customer> GetCustomers()
+        {
+            var result = uow.GetCustomers();
+            return result;
+        }
+
+
         /// <summary>
         /// Adds a hardcoded customer
         /// </summary>

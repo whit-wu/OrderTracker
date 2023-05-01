@@ -9,5 +9,7 @@ namespace OrderTracker.Data
     {
         public bool AddCustomer(Customer customer);
         public IQueryable<Customer> GetCustomerById(int id);
+
+        public IQueryable<Customer> GetCustomers();
     }
 }

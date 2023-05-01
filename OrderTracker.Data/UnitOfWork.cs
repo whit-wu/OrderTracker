@@ -37,5 +37,13 @@ namespace OrderTracker.Data
            
             
         }
+
+        public IQueryable<Customer> GetCustomers()
+        {
+            return _context.Customers;
+
+
+
+        }
     }
 }
